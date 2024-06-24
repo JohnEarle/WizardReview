@@ -1,0 +1,2 @@
+# WizardReview
+Spelltable Review Application
