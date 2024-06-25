@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Ratings</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            width: 600px; /* Increased width for more space */
+        }
+        .username {
+            font-size: 24px; /* Large text */
+            font-weight: bold; /* Bold text */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .user-info {
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        .player {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .rating-container {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .rating-container button {
+            margin-right: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .rating-container button.bad-button {
+            background-color: #f44336;
+        }
+        .comment-input {
+            width: 100%;
+            height: 100px; /* Increased height for more comment space */
+            resize: none;
+            margin-top: 10px;
+        }
+        .comment {
+            margin-bottom: 10px;
+        }
+		
+		.auth-style {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    text-align: center;
+    margin-top: 50px;
+    width: 300px; /* Fixed width for better control */
+}
+
+.auth-style h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.auth-style input {
+    width: calc(100% - 20px); /* Full width minus padding */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+    border-radius: 20px; /* Rounded borders */
+    box-sizing: border-box; /* Includes padding in width */
+}
+
+.auth-buttons button {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 20px; /* Rounded edges for buttons */
+    border: none;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.auth-buttons button:hover {
+    opacity: 0.9; /* Slight transparency on hover */
+}
+
+#login {
+    background-color: #4CAF50;
+}
+
+#signup {
+    background-color: #008CBA;
+}
+
+#signout {
+    background-color: #f44336;
+}
+
+		
+		
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+		<div id="auth-container" class="auth-style">
+			<h2>Welcome</h2>
+			<input type="email" id="email" placeholder="Email Address">
+			<input type="password" id="password" placeholder="Password">
+			<div class="auth-buttons">
+				<button id="login">Login</button>
+				<button id="signup">Sign Up</button>
+			</div>
+		</div>
+        <div id="user-list" class="user-info"></div>
+		<button id="signout" style="display:none;">Sign Out</button> <!-- Sign out button -->
+    </div>
+    <script src="firebase/firebase-app.js"></script>
+    <script src="firebase/firebase-auth.js"></script>
+    <script src="firebase/firebase-firestore.js"></script>
+    <script src="popup.js"></script>
+</body>
+</html>
